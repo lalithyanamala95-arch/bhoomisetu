@@ -79,6 +79,14 @@ export default function SiteHeader() {
             Investment
           </NavLink>
 
+          <NavLink href="/about">
+            About
+          </NavLink>
+
+          <NavLink href="/contact">
+            Contact
+          </NavLink>
+
           <Link
             href="/signup"
             className="rounded-full border border-white/10 px-5 py-2.5 text-[8px] uppercase tracking-[0.18em] text-white/50 transition hover:border-white/30 hover:text-white"
@@ -153,6 +161,20 @@ export default function SiteHeader() {
               onClick={() => setMenu(false)}
             >
               Investment
+            </MobileLink>
+
+            <MobileLink
+              href="/about"
+              onClick={() => setMenu(false)}
+            >
+              About
+            </MobileLink>
+
+            <MobileLink
+              href="/contact"
+              onClick={() => setMenu(false)}
+            >
+              Contact
             </MobileLink>
 
             <MobileLink

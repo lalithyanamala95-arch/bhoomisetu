@@ -52,3 +52,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Copy `.env.example` to `.env.local` and fill in your own values.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## BhoomiSetu production additions
+
+### Supabase
+Run `supabase/001_bhoomisetu_platform.sql` in the Supabase SQL Editor. It adds property image storage metadata, the premium purchase ledger, RLS policies, and the `land-images` bucket.
+
+### Admin
+Set `ADMIN_EMAILS` to the comma-separated email(s) that should access `/admin`. Set `SUPABASE_SERVICE_ROLE_KEY` only in server/Vercel environment variables; never expose it to client code.
+
+### Premium reports / Razorpay
+The property detail page exposes a deliberately limited public profile. A signed-in buyer can unlock the full intelligence report per property. The default price is ₹99 and can be changed with `PREMIUM_PRICE_INR`.
+
+Configure `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, and `RAZORPAY_WEBHOOK_SECRET`. Razorpay orders are created server-side and the returned signature is verified server-side before the purchase row is marked paid. Configure the webhook URL as `/api/payments/webhook` in Razorpay Dashboard.
+
+Razorpay's current Standard Checkout documentation requires server-side order creation, server-side signature verification, and webhooks for reliable payment confirmation. See the official guide: https://razorpay.com/docs/developer-tools/integrations/standard-checkout/

@@ -59,6 +59,15 @@ export default function AboutPage() {
 
           </div>
 
+          <div className="mt-16 rounded-3xl border border-white/[0.07] bg-white/[0.025] p-7 sm:p-9">
+            <div className="text-[8px] uppercase tracking-[0.25em] text-emerald-200/40">Talk to the team</div>
+            <h2 className="mt-4 text-2xl font-light">Questions, listings or partnerships?</h2>
+            <div className="mt-6 flex flex-col gap-3 text-sm text-white/45 sm:flex-row sm:items-center sm:gap-8">
+              <a href="tel:+917996631113" className="hover:text-white">+91 79966 31113</a>
+              <a href="mailto:yanamalalalith@gmail.com" className="hover:text-white">yanamalalalith@gmail.com</a>
+            </div>
+          </div>
+
         </div>
 
       </section>

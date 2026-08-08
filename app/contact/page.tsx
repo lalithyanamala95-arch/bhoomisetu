@@ -2,91 +2,50 @@
 
 import { useState } from "react";
 import SiteHeader from "@/components/SiteHeader";
+import { Mail, Phone, ArrowUpRight } from "lucide-react";
 
 export default function ContactPage() {
-  const [sent, setSent] =
-    useState(false);
+  const [sent, setSent] = useState(false);
 
   return (
     <main className="min-h-screen bg-[#070908] text-white">
-
       <SiteHeader />
-
       <section className="px-5 pb-24 pt-32 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-[1100px]">
+          <div className="text-[8px] uppercase tracking-[0.3em] text-emerald-200/40">Contact BhoomiSetu</div>
+          <h1 className="mt-5 text-5xl font-light tracking-[-0.06em] sm:text-7xl">Let&apos;s talk<br />about land.</h1>
+          <p className="mt-7 max-w-2xl text-sm leading-8 text-white/30">Questions about listing a property, verification, premium intelligence or partnerships? Reach the BhoomiSetu team directly.</p>
 
-        <div className="mx-auto max-w-[900px]">
-
-          <div className="text-[8px] uppercase tracking-[0.3em] text-emerald-200/40">
-            Contact
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            <a href="tel:+917996631113" className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] p-7 transition hover:border-white/15">
+              <Phone size={17} className="text-emerald-200/55" />
+              <div className="mt-6 text-[8px] uppercase tracking-[0.2em] text-white/20">Phone</div>
+              <div className="mt-2 text-lg text-white/70">+91 79966 31113</div>
+              <div className="mt-3 text-xs text-white/25">Call for property, verification and platform enquiries.</div>
+            </a>
+            <a href="mailto:yanamalalalith@gmail.com" className="group rounded-3xl border border-white/[0.07] bg-white/[0.025] p-7 transition hover:border-white/15">
+              <Mail size={17} className="text-emerald-200/55" />
+              <div className="mt-6 text-[8px] uppercase tracking-[0.2em] text-white/20">Email</div>
+              <div className="mt-2 break-all text-lg text-white/70">yanamalalalith@gmail.com</div>
+              <div className="mt-3 text-xs text-white/25">For detailed enquiries, partnerships and support.</div>
+            </a>
           </div>
 
-          <h1 className="mt-5 text-5xl font-light tracking-[-0.06em] sm:text-7xl">
-            Let's talk
-            <br />
-            about land.
-          </h1>
-
-
           {sent ? (
-
             <div className="mt-12 rounded-2xl border border-emerald-200/15 bg-emerald-200/[0.03] p-7">
-
-              <div className="text-lg font-light">
-                Message received.
-              </div>
-
-              <p className="mt-2 text-xs text-white/25">
-                Thank you for contacting
-                BhoomiSetu.
-              </p>
-
+              <div className="text-lg font-light">Message received.</div>
+              <p className="mt-2 text-xs text-white/25">Thank you for contacting BhoomiSetu.</p>
             </div>
-
           ) : (
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-              className="mt-12 space-y-4"
-            >
-
-              <input
-                required
-                placeholder="Your name"
-                className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15"
-              />
-
-              <input
-                required
-                type="email"
-                placeholder="Email"
-                className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15"
-              />
-
-              <textarea
-                required
-                rows={7}
-                placeholder="Tell us what you need..."
-                className="w-full resize-none rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15"
-              />
-
-              <button
-                type="submit"
-                className="rounded-full bg-white px-7 py-4 text-[9px] uppercase tracking-[0.2em] text-black"
-              >
-                Send message →
-              </button>
-
+            <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="mt-12 space-y-4">
+              <input required placeholder="Your name" className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15" />
+              <input required type="email" placeholder="Email" className="w-full rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15" />
+              <textarea required rows={7} placeholder="Tell us what you need..." className="w-full resize-none rounded-2xl border border-white/[0.08] bg-white/[0.025] px-5 py-4 text-sm outline-none placeholder:text-white/15" />
+              <button type="submit" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-[9px] uppercase tracking-[0.2em] text-black">Send message <ArrowUpRight size={12} /></button>
             </form>
-
           )}
-
         </div>
-
       </section>
-
     </main>
   );
 }
