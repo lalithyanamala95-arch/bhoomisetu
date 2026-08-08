@@ -6,6 +6,13 @@ export async function GET(request: NextRequest) {
   if (!user) return NextResponse.json({ success: true, unlocked: false });
 
   const supabase = await getUserSupabaseClient(request);
+  if (!supabase) {
+    return NextResponse.json(
+      { success: true, unlocked: false },
+      { status: 200 }
+    );
+  }
+
   const landId = request.nextUrl.searchParams.get("landId");
   if (!landId) return NextResponse.json({ success: true, unlocked: false });
 
