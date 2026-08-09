@@ -67,3 +67,7 @@ The property detail page exposes a deliberately limited public profile. A signed
 Configure `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET`, and `RAZORPAY_WEBHOOK_SECRET`. Razorpay orders are created server-side and the returned signature is verified server-side before the purchase row is marked paid. Configure the webhook URL as `/api/payments/webhook` in Razorpay Dashboard.
 
 Razorpay's current Standard Checkout documentation requires server-side order creation, server-side signature verification, and webhooks for reliable payment confirmation. See the official guide: https://razorpay.com/docs/developer-tools/integrations/standard-checkout/
+
+## Visual direction
+
+The current interface uses a cinematic spatial-intelligence direction: dark architectural surfaces, restrained emerald signals, glass HUD panels, animated 3D terrain, parcel beacons and a dedicated spatial-world experience. Google map tiles and route lines are intentionally not part of the 3D visual language.
